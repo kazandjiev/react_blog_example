@@ -1,0 +1,11 @@
+.post .buttonContainer{
+    display: flex;
+}
+
+.post .button.error{
+    margin-left: 10px;
+}
+
+.post .button.success{
+    margin-left: auto;
+}
