@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
 import Post from './Post';
+import React, {Component} from 'react';
 
 class PostsContainer extends Component {
     render() {
@@ -18,7 +18,9 @@ class PostsContainer extends Component {
     }
 }
 PostsContainer.propTypes = {
-    posts: React.PropTypes.array.isRequired
+    posts: React.PropTypes.arrayOf(
+        React.PropTypes.object
+    ).isRequired
 };
 
 export default PostsContainer;
