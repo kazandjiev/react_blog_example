@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Button from '../Button';
-import CommentContainer from '../Comment';
+import CommentsContainer from '../Comment';
 import React, {Component} from 'react';
 import {SHOW_COMMENTS, HIDE_COMMENTS} from '../../utils/constants';
 import {commentsForPostEndPoint} from '../../utils/helpers';
@@ -28,7 +28,7 @@ class Post extends Component {
 
     render() {
         let commentsComponent = this.state.showComments ?
-            <CommentContainer comments={this.state.comments}/> : undefined;
+            <CommentsContainer comments={this.state.comments}/> : undefined;
         const commentsBtnText = this.state.showComments ? HIDE_COMMENTS : SHOW_COMMENTS;
 
         return (
