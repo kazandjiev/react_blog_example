@@ -2,7 +2,8 @@ import axios from 'axios';
 import Button from '../Button';
 import CommentContainer from '../Comment';
 import React, {Component} from 'react';
-import {GET_COMMENTS_FOR_POST, SHOW_COMMENTS, HIDE_COMMENTS} from '../../utils/constants'
+import {SHOW_COMMENTS, HIDE_COMMENTS} from '../../utils/constants';
+import {commentsForPostEndPoint} from '../../utils/helpers';
 import './Post.css';
 
 class Post extends Component {
@@ -15,7 +16,7 @@ class Post extends Component {
     }
 
     toggleComments() {
-        axios.get(GET_COMMENTS_FOR_POST + this.props.id)
+        axios.get(commentsForPostEndPoint(this.props.id))
             .then(response => {
                 this.setState({
                     showComments: !this.state.showComments,
