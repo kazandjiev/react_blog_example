@@ -10,8 +10,8 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-    classes: React.PropTypes.string,
-    onClick: React.PropTypes.func,
-    text: React.PropTypes.string
+    classes: React.PropTypes.string.isRequired,
+    onClick: React.PropTypes.func.isRequired,
+    text: React.PropTypes.string.isRequired
 };
 export default Button;

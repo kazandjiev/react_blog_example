@@ -18,7 +18,7 @@ class PostsContainer extends Component {
     }
 }
 PostsContainer.propTypes = {
-    posts: React.PropTypes.array
+    posts: React.PropTypes.array.isRequired
 };
 
 export default PostsContainer;

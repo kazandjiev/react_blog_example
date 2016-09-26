@@ -48,9 +48,9 @@ class Post extends Component {
 }
 
 Post.propTypes = {
-    id: React.PropTypes.number,
-    title: React.PropTypes.string,
-    body: React.PropTypes.string
+    id: React.PropTypes.number.isRequired,
+    title: React.PropTypes.string.isRequired,
+    body: React.PropTypes.string.isRequired
 };
 
 export default Post;

@@ -10,8 +10,8 @@ class Comment extends Component {
 }
 
 Comment.propTypes = {
-    email: React.PropTypes.string,
-    body: React.PropTypes.string
+    email: React.PropTypes.string.isRequired,
+    body: React.PropTypes.string.isRequired
 };
 
 export default Comment;
