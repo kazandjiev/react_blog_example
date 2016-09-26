@@ -10,6 +10,13 @@ class App extends Component {
         this.state = {
             posts: []
         };
+        this.onDelete = this.onDelete.bind(this);
+    }
+
+    onDelete(id) {
+        return () => {
+            this.setState({posts: this.state.posts.filter(post => post.id !== id)});
+        };
     }
 
     componentDidMount() {
@@ -24,7 +31,7 @@ class App extends Component {
         return (
             <main className="app" role="main">
                 <h1>My Awesome Blog</h1>
-                <PostsContainer posts={this.state.posts}/>
+                <PostsContainer posts={this.state.posts} onDelete={this.onDelete}/>
             </main>
         );
     }

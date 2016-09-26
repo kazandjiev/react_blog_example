@@ -39,7 +39,7 @@ class Post extends Component {
                 </section>
                 <div className="buttonContainer">
                     <Button classes="button" text="Edit"/>
-                    <Button classes="button error" text="Delete"/>
+                    <Button classes="button error" text="Delete" onClick={this.props.onDelete} />
                     <Button classes="button success" onClick={this.toggleComments} text={commentsBtnText}/>
                 </div>
                 {commentsComponent}

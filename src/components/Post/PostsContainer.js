@@ -11,6 +11,7 @@ class PostsContainer extends Component {
                         id={post.id}
                         title={post.title}
                         body={post.body}
+                        onDelete={this.props.onDelete.call(this.props.onDelete, post.id)}
                     />
                 )}
             </section>
