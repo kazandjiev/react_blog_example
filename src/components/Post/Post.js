@@ -19,8 +19,8 @@ class Post extends Component {
             .then(response => {
                 response.json()
                     .then(data => this.setState({
-                        showComments: !this.state.showComments,
-                        comments: data.slice(0, 10)
+                            showComments: !this.state.showComments,
+                            comments: data.slice(0, 10)
                         })
                     );
             });
@@ -40,7 +40,7 @@ class Post extends Component {
                 </section>
                 <div className="buttonContainer">
                     <Button classes="button" text="Edit"/>
-                    <Button classes="button error" text="Delete" onClick={this.props.onDelete} />
+                    <Button classes="button error" text="Delete" onClick={this.props.onDelete}/>
                     <Button classes="button success" onClick={this.toggleComments} text={commentsBtnText}/>
                 </div>
                 {commentsComponent}
