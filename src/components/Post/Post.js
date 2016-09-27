@@ -15,6 +15,14 @@ class Post extends Component {
     }
 
     toggleComments() {
+
+        if(this.state.showComments) {
+            this.setState({
+                showComments: !this.state.showComments
+            });
+            return;
+        }
+
         fetch(commentsForPostEndPoint(this.props.id))
             .then(response => {
                 response.json()
