@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {GET_POSTS_ENDPOINT} from './utils/constants';
 import PostsContainer from './components/Post';
 import React, {Component} from 'react';
@@ -20,10 +19,12 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // might use fetch API depending on the browser support;
-        axios.get(GET_POSTS_ENDPOINT)
+
+        fetch(GET_POSTS_ENDPOINT)
             .then(response => {
-                this.setState({posts: response.data.slice(0, 20)})
+                response.json()
+                    .then(data => this.setState({posts: data.slice(0, 20)}))
+
             });
     }
 

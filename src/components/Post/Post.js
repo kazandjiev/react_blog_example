@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Button from '../Button';
 import CommentsContainer from '../Comment';
 import React, {Component} from 'react';
@@ -16,12 +15,14 @@ class Post extends Component {
     }
 
     toggleComments() {
-        axios.get(commentsForPostEndPoint(this.props.id))
+        fetch(commentsForPostEndPoint(this.props.id))
             .then(response => {
-                this.setState({
-                    showComments: !this.state.showComments,
-                    comments: response.data.slice(0, 10)
-                });
+                response.json()
+                    .then(data => this.setState({
+                        showComments: !this.state.showComments,
+                        comments: data.slice(0, 10)
+                        })
+                    );
             });
 
     }
