@@ -1,5 +1,8 @@
 import {GET_POSTS_ENDPOINT} from './utils/constants';
 import {deletePost} from './utils/helpers';
+/* eslint-disable */
+import normalize from 'normalize.css/normalize.css';
+/* eslint-enable */
 import PostsContainer from './components/Post';
 import React, {Component} from 'react';
 import './App.css';
