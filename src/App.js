@@ -1,4 +1,5 @@
 import {GET_POSTS_ENDPOINT} from './utils/constants';
+import {deletePost} from './utils/helpers';
 import PostsContainer from './components/Post';
 import React, {Component} from 'react';
 import './App.css';
@@ -9,12 +10,21 @@ class App extends Component {
         this.state = {
             posts: []
         };
+        this.oldState = {};
         this.onDelete = this.onDelete.bind(this);
     }
 
     onDelete(id) {
         return () => {
+            this.oldState.posts = this.state.posts;
             this.setState({posts: this.state.posts.filter(post => post.id !== id)});
+            fetch(deletePost(id), {method: 'DELETE'})
+                .then(response => response)
+                .catch(err => {
+                        this.setState({posts: this.oldState.posts});
+                        console.error(err.message)
+                    }
+                );
         };
     }
 
