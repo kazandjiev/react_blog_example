@@ -1,11 +1,25 @@
-.post .buttonContainer{
+.post .buttonContainer {
     display: flex;
 }
 
-.post .button.error{
+.post .button.error {
     margin-left: 10px;
 }
 
-.post .button.success{
+.post .button.success {
     margin-left: auto;
+}
+
+.post textarea {
+    display: block;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 100px;
+    margin-bottom: 10px;
+    min-width: 320px;
+    line-height: 1.1em;
+    padding: 5px;
+    width: 100%;
 }
